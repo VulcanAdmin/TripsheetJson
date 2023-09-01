@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="item_choice">
+        <item>Parts short</item>
+        <item>Parts damaged</item>
+        <item>Parts not bent/bent wrong</item>
+        <item>Over supplied</item>
+        <item>Incorrectly supplied</item>
+
+    </string-array>
+</resources>

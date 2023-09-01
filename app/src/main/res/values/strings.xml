@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Tripsheet</string>
+    <string name="element_text">elementtext_string</string>
+    <string name="driver">drivers</string>
+    <string name="button1">Delivered</string>
+    <string name="button2">Exception</string>
+    <string name="btnOtW">⛟</string>
+    <string name="btnPallet">▥</string>
+    <string name="btnClear">x</string>
+    <string name="worder">W Order</string>
+    <string name="delnote">Del Note</string>
+    <string name="company">Company</string>
+    <string name="invoice">Invc.</string>
+    <string name="weight">Weight</string>
+    <string name="dialogTitleDel">Confirm delivery. Has the delivery been checked?</string>
+    <string name="dialogTitleExc">Confirm exception on delivery.</string>
+    <string name="dialogTitleOnTheWay">Confirm the on route location.</string>
+    <string name="dialogClear">Clear input.</string>
+    <string name="dialogPallet">Dropperd pallets.</string>
+    <string name="dialogTitleMap">Open Map</string>
+    <string name="dialogMessage">Are you sure you wish to capture this delivery as sucsessfully delivered?</string>
+    <string name="partName">Part name</string>
+    <string name="partQTY">QTY</string>
+    <string name="cbExc">Exc</string>
+    <string name="partReason">Reason</string>
+    <string name="questionMark">❓</string>
+    <string name="vulcan_steel_trip_sheet">Vulcan Steel Trip Sheet:</string>
+    <string name="dialogTitlePallet">Pallets returned or dropped off?</string>
+    <string-array name="list_reasons">
+        <item>Select a reason</item>
+        <item>Parts short</item>
+        <item>Parts incorrect</item>
+        <item>Parts damaged</item>
+        <item>Parts not bent/bent wrong</item>
+        <item>Over supplied</item>
+        <item>Incorrectly supplied</item>
+        <item>Parts not loaded</item>
+        <item>Contact Driver</item>
+        <item>Contact Customer</item>
+    </string-array>
+    <string-array name="notDelivered_reasons">
+        <item>They were closed</item>
+        <item>Dispatch said not to deliver</item>
+        <item>Not Loaded</item>
+    </string-array>
+    <integer-array name="notDelv_reasons_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+</resources>

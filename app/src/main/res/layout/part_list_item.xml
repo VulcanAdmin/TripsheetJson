@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/itemcbExc"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:foregroundGravity="center_horizontal"
+        />
+
+    <TextView
+        android:id="@+id/itemtxtpartName"
+        android:layout_width="370dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:foregroundGravity="center_horizontal"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/partName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/itemtxtpartQTY"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:foregroundGravity="center_horizontal"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/partQTY"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:ignore="TextContrastCheck" />
+
+    <Spinner
+        android:id="@+id/itemspnReason"
+        android:layout_width="600dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:entries="@array/list_reasons"
+        />
+
+    <Spinner
+        android:id="@+id/itemspnQTY"
+        android:layout_width="130dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        />
+
+
+</LinearLayout>

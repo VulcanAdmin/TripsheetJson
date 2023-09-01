@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#C3C3C3" /> <!-- Background color of the border -->
+            <stroke
+                android:color="#ED000000"
+            android:width="2dp" />
+            <corners android:radius="4dp" /> <!-- Adjust the radius as needed -->
+        </shape>
+    </item>
+
+    <!-- Spinner background -->
+    <item android:drawable="@drawable/abc_spinner_mtrl_am_alpha" />
+
+</layer-list>

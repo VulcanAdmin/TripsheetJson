@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    tools:context=".Main.MainActivity"
+    android:stretchColumns="*">
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
+
+
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="@string/vulcan_steel_trip_sheet"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/red" />
+
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4.1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btntripsheet1"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="210dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#FF519EDC"
+                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+
+                    android:id="@+id/btntripsheet2"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="210dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#FF519EDC"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btntripsheet3"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="210dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#FF519EDC"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btntripsheet4"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="210dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#FF519EDC"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btntripsheet5"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="210dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#FF519EDC"
+                    android:text="←"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spnDriver"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1.65"
+            android:background="@drawable/spinner_bg"
+            android:contentDescription="@string/driver"
+            android:foregroundGravity="center"
+            android:gravity="top"
+            android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:layout_weight="0.4"
+            android:gravity="center"
+            android:text="↻"
+            android:textColor="#252222"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/headers"
+        android:background="#ffffff"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/txtWOrder"
+            android:layout_width="0dp"
+            android:layout_weight="140"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:background="@drawable/table_header_cell_bg"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/worder"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/txtDElNote"
+            android:layout_width="0dp"
+            android:layout_weight="130"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:background="@drawable/table_header_cell_bg"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/delnote"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/txtCompany"
+            android:layout_width="0dp"
+            android:layout_weight="220"
+
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:background="@drawable/table_header_cell_bg"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/company"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/txtInvoice"
+            android:layout_width="0dp"
+            android:layout_weight="140"
+
+            android:layout_height="match_parent"
+            android:background="@drawable/table_header_cell_bg"
+            android:foregroundGravity="center_horizontal"
+            android:text="@string/invoice"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck"  />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOnTheWay"
+            android:layout_width="0dp"
+            android:layout_weight="55"
+
+            android:layout_height="match_parent"
+            android:background="@drawable/table_header_cell_bg"
+            android:textAlignment="center"
+            android:text="@string/btnOtW"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPallet"
+            android:layout_width="0dp"
+            android:layout_weight="55"
+
+            android:layout_height="match_parent"
+            android:background="@drawable/table_header_cell_bg"
+            android:textAlignment="center"
+            android:text="@string/btnPallet"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnComplete"
+            android:layout_width="0dp"
+            android:layout_weight="165"
+
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:background="@drawable/table_header_cell_bg"
+
+            android:text="@string/button1"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnException"
+            android:layout_width="0dp"
+            android:layout_weight="165"
+
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:background="@drawable/table_header_cell_bg"
+
+            android:text="@string/button2"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/txttvdone"
+            android:layout_width="0dp"
+            android:layout_weight="45"
+
+            android:layout_height="match_parent"
+            android:background="@drawable/table_header_cell_bg"
+            android:foregroundGravity="center_horizontal"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/txtWeight"
+            android:layout_width="0dp"
+            android:layout_weight="120"
+
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:background="@drawable/table_header_cell_bg"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/weight"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="TextContrastCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_weight="45"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_header_cell_bg"
+            android:textAlignment="center"
+            android:text="@string/btnClear"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+    </TableRow>
+
+
+
+    <TableRow
+        android:background="#FFFFFF"
+        >
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="627dp"
+            android:layout_margin="0dp"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTripsheetlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/table_list_item" />
+
+        </HorizontalScrollView>
+
+
+    </TableRow>
+
+
+
+
+
+
+
+
+    <TableRow
+        android:id="@+id/footerow"
+        android:background="#ffffff"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTotaldelv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.3"
+            android:text="Total Delivery Notes: 0 "
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalleft"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Delivery Notes uncomplete: 0"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalInv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.8"
+            android:text="Total Invoices: 0 "
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvConfirmdelv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.2"
+            android:text="Total Confirmations: 0"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvExcondelv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Total Exceptions: 0"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalweight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.1"
+            android:text="Total weight: 0kg"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+
+    </TableRow>
+
+
+</TableLayout>

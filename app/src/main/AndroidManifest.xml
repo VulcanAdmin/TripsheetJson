@@ -24,13 +24,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tripsheet"
         android:screenOrientation="landscape">
-        <activity android:name=".Exception.DelException"></activity>
-        <activity android:name=".utils.AddressChange"></activity>
-        <activity android:name=".utils.ConnFailed"></activity>
-        <activity android:name=".Update"></activity>
+        <activity android:name=".Exception.DelException"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".utils.AddressChange"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".utils.ConnFailed"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".Update"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".Main.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

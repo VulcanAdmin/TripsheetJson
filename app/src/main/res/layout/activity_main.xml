@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tableLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    tools:context=".Main.MainActivity"
-    android:stretchColumns="*">
+    android:stretchColumns="*"
+    tools:context=".Main.MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar_cyclic"
+        android:layout_width="189dp"
+        android:layout_height="109dp"
+        android:baselineAligned="false"
+        android:minWidth="40dp"
+        android:minHeight="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="3dp"/>
 
 
     <TableRow
+        android:id="@+id/tableRow2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="1dp"
-        android:layout_weight="1"
-        android:background="#FFFFFF">
+        android:layout_height="65dp"
+        android:background="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
@@ -114,19 +131,26 @@
 
     </TableRow>
 
+
     <TableRow
         android:id="@+id/headers"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:background="#ffffff"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="50dp">
+
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow2">
 
         <TextView
             android:id="@+id/txtWOrder"
             android:layout_width="0dp"
-            android:layout_weight="140"
             android:layout_height="match_parent"
             android:layout_gravity="top"
+            android:layout_weight="140"
             android:background="@drawable/table_header_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_horizontal|center_vertical"
@@ -138,9 +162,9 @@
         <TextView
             android:id="@+id/txtDElNote"
             android:layout_width="0dp"
-            android:layout_weight="130"
             android:layout_height="match_parent"
             android:layout_gravity="top"
+            android:layout_weight="130"
             android:background="@drawable/table_header_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_horizontal|center_vertical"
@@ -152,10 +176,10 @@
         <TextView
             android:id="@+id/txtCompany"
             android:layout_width="0dp"
-            android:layout_weight="220"
-
             android:layout_height="match_parent"
+
             android:layout_gravity="top"
+            android:layout_weight="220"
             android:background="@drawable/table_header_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_horizontal|center_vertical"
@@ -168,48 +192,48 @@
         <TextView
             android:id="@+id/txtInvoice"
             android:layout_width="0dp"
-            android:layout_weight="140"
-
             android:layout_height="match_parent"
+
+            android:layout_weight="140"
             android:background="@drawable/table_header_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:text="@string/invoice"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
-            tools:ignore="TextContrastCheck"  />
+            tools:ignore="TextContrastCheck" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnOnTheWay"
             android:layout_width="0dp"
-            android:layout_weight="55"
-
             android:layout_height="match_parent"
+
+            android:layout_weight="55"
             android:background="@drawable/table_header_cell_bg"
-            android:textAlignment="center"
             android:text="@string/btnOtW"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="19sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPallet"
             android:layout_width="0dp"
-            android:layout_weight="55"
-
             android:layout_height="match_parent"
+
+            android:layout_weight="55"
             android:background="@drawable/table_header_cell_bg"
-            android:textAlignment="center"
             android:text="@string/btnPallet"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="19sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnComplete"
             android:layout_width="0dp"
-            android:layout_weight="165"
-
             android:layout_height="match_parent"
+
             android:layout_gravity="top"
+            android:layout_weight="165"
             android:background="@drawable/table_header_cell_bg"
 
             android:text="@string/button1"
@@ -219,10 +243,10 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnException"
             android:layout_width="0dp"
-            android:layout_weight="165"
-
             android:layout_height="match_parent"
+
             android:layout_gravity="top"
+            android:layout_weight="165"
             android:background="@drawable/table_header_cell_bg"
 
             android:text="@string/button2"
@@ -232,9 +256,9 @@
         <TextView
             android:id="@+id/txttvdone"
             android:layout_width="0dp"
-            android:layout_weight="45"
-
             android:layout_height="match_parent"
+
+            android:layout_weight="45"
             android:background="@drawable/table_header_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:text=""
@@ -246,10 +270,10 @@
         <TextView
             android:id="@+id/txtWeight"
             android:layout_width="0dp"
-            android:layout_weight="120"
-
             android:layout_height="match_parent"
+
             android:layout_gravity="top"
+            android:layout_weight="120"
             android:background="@drawable/table_header_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_horizontal|center_vertical"
@@ -261,27 +285,33 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClear"
             android:layout_width="0dp"
-            android:layout_weight="45"
             android:layout_height="match_parent"
+            android:layout_weight="45"
             android:background="@drawable/table_header_cell_bg"
-            android:textAlignment="center"
             android:text="@string/btnClear"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="19sp" />
 
     </TableRow>
 
-
-
     <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="635dp"
+
         android:background="#FFFFFF"
-        >
+
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headers">
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="627dp"
-            android:layout_margin="0dp"
-            >
+            android:layout_height="635dp"
+            android:layout_margin="0dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewTripsheetlist"
@@ -297,18 +327,14 @@
     </TableRow>
 
 
-
-
-
-
-
-
     <TableRow
         android:id="@+id/footerow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#ffffff"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow3">
 
         <TextView
             android:id="@+id/tvTotaldelv"
@@ -368,10 +394,10 @@
             android:text="Total weight: 0kg"
             android:textColor="#000000"
             android:textSize="17sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
 
     </TableRow>
 
 
-</TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

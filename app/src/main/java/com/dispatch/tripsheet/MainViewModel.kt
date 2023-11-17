@@ -49,28 +49,28 @@ class MainViewModel(private val repository: Repository): ViewModel() {
         }
     }
 
-    fun pushDeliveredChecked(uniqueId: String, DELIVERED: Int = 1, checked: Int = 1,lat: Double, long: Double, delno: String) {
+    fun pushDelivered(uniqueId: String, DELIVERED: Int = 1, checked: Int,lat: Double, long: Double, delno: String) {
         viewModelScope.launch {
 
 
-            val response = repository.pushDeliveredChecked(uniqueId, DELIVERED, checked, lat, long, delno)
+            val response = repository.pushDelivered(uniqueId, DELIVERED, checked, lat, long, delno)
             myPost2.value = response
 
 
         }
     }
 
-    fun pushDeliveredUnchecked(uniqueId: String, DELIVERED: Int = 2, checked: Int = 2,lat: Double, long: Double, delno: String) {
+
+    fun pushExcept(uniqueId: String, DELIVERED: Int = 2, checked: Int = 1,lat: Double, long: Double, delno: String) {
         viewModelScope.launch {
 
 
-            val response = repository.pushDeliveredUnchecked(uniqueId, DELIVERED, checked, lat, long, delno)
+            val response = repository.pushExcept(uniqueId, DELIVERED, checked, lat, long, delno)
             myPost2.value = response
 
 
         }
     }
-
     fun pushOnTheWay(uniqueId: String, DELIVERED: Int = 5, mailOTW: Int = 1,lat: Double, long: Double, delno: String) {
         viewModelScope.launch {
 

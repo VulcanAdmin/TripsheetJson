@@ -23,8 +23,10 @@ import androidx.core.content.FileProvider
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dispatch.tripsheet.Main.MainActivity
 import com.dispatch.tripsheet.MainViewModel
 import com.dispatch.tripsheet.R
+import com.dispatch.tripsheet.Update
 import com.dispatch.tripsheet.model.Cell2
 import com.dispatch.tripsheet.model.ExceptionDetails
 import com.dispatch.tripsheet.repository.Repository
@@ -38,6 +40,8 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
+
+/// Check reason before photo check!
 
 class DelException : AppCompatActivity(){
 
@@ -57,97 +61,92 @@ class DelException : AppCompatActivity(){
 //    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-         println("Location DelException  Exception")
-         super.onCreate(savedInstanceState)
-         setContentView(R.layout.activity_ex_form)
+        println("Location DelException  Exception")
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_ex_form)
 
+        Log.e("Skull", "1")
         imageFile = createImageFile()
         val bundle = intent.extras
 
-         var DELNO: String = "null"
-         DELNO = bundle!!.getString("DELNO").toString()
+        var DELNO: String = "null"
+        DELNO = bundle!!.getString("DELNO").toString()
 //         var Driver: String? = null
 //         Driver = bundle!!.getString("Driver")
 //         tvDriver.text = Driver
 
-         tvDriver.text = bundle.getString("Driver")
+        tvDriver.text = bundle.getString("Driver")
 
-         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
-         tvDate.text = sdf.format(Date())
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        tvDate.text = sdf.format(Date())
 
-         recyclerViewPartlist.layoutManager = LinearLayoutManager(this)
-         recyclerViewPartlist.setItemViewCacheSize(30)
+        recyclerViewPartlist.layoutManager = LinearLayoutManager(this)
+        recyclerViewPartlist.setItemViewCacheSize(30)
 
-         var partsList = ArrayList<Cell2>()
+        var partsList = ArrayList<Cell2>()
 
-         var adapter = ArrayAdapter<String>(
-             this,
-             androidx.appcompat.R.layout.support_simple_spinner_dropdown_item
-         )
+        var adapter = ArrayAdapter<String>(
+            this,
+            androidx.appcompat.R.layout.support_simple_spinner_dropdown_item
+        )
 
-         conn(partsList, DELNO, adapter)
+        conn(partsList, DELNO, adapter)
 
-         var btnSend: Button = findViewById(R.id.btnSend)
-         var btnBack: Button = findViewById(R.id.btnBack)
-         var cBPhoto: CheckBox = findViewById(R.id.cBPhoto)
-         var btnNotDel: Button = findViewById(R.id.btnNotDelivered)
+        var btnSend: Button = findViewById(R.id.btnSend)
+        var btnBack: Button = findViewById(R.id.btnBack)
+        var cBPhoto: CheckBox = findViewById(R.id.cBPhoto)
+        var btnNotDel: Button = findViewById(R.id.btnNotDelivered)
 
-         btnBack.setOnClickListener { this.finish() }
+        btnBack.setOnClickListener {
+        //    finish()
+
+            val i = Intent(this, MainActivity::class.java)
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(i)
+        }
 
 
 
 
-         btnNotDel.setOnClickListener {
+        btnNotDel.setOnClickListener {
 
-             val dialogView = layoutInflater.inflate(R.layout.dialog_layout, null)
-             val spinnerReason: Spinner = dialogView.findViewById(R.id.spinnerReason)
+            Log.e("Skull", "2")
+            val dialogView = layoutInflater.inflate(R.layout.dialog_layout, null)
+            val spinnerReason: Spinner = dialogView.findViewById(R.id.spinnerReason)
 
-             val reasonsAdapter = ArrayAdapter.createFromResource(
-                 this,
-                 R.array.notDelivered_reasons,
-                 android.R.layout.simple_spinner_item
-             ).apply {
-                 setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-             }
-             spinnerReason.adapter = reasonsAdapter
+            val reasonsAdapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.notDelivered_reasons,
+                android.R.layout.simple_spinner_item
+            ).apply {
+                setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            }
+            spinnerReason.adapter = reasonsAdapter
 
-             val builder = AlertDialog.Builder(this)
-                 .setTitle("Select Reason")
-                 .setView(dialogView)
-                 .setPositiveButton("OK") { dialog, _ ->
-                     val selectedReason = resources.getIntArray(R.array.notDelv_reasons_values)[spinnerReason.selectedItemPosition]
+            val builder = AlertDialog.Builder(this)
+                .setTitle("Select Reason")
+                .setView(dialogView)
+                .setPositiveButton("OK") { _, _ ->
 
-                     val repository = Repository()
-                     val viewModelFactory = MainViewModelFactory(repository)
-                     viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-                     viewModel.pushNotDel(uniqueId,1, DELNO, selectedReason)
-                     viewModel.myResponse2.observe(this, Observer { response ->
-                         if(response.isSuccessful){
-//                             Log.d("Main", response.body().toString())
-//                             Log.d("Main", response.code().toString())
-//                             Log.d("Main", response.message().toString())
-                         }else {
-                             Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
-                             Log.e("RETROFIT_ERROR", response.code().toString())
-                             System.err.println("Got an exception! ")
-                             val intent = Intent(baseContext, ConnFailed::class.java)
-                             startActivity(intent)
-                         }
-                     })
-                     this.finish()
+                    Log.e("Skull", "3")
+                    val selectedReason = resources.getIntArray(R.array.notDelv_reasons_values)[spinnerReason.selectedItemPosition]
+                    sendNotDel(DELNO, selectedReason)
+
+
+                    // this.finish()
 
 
                     // dialog.dismiss()
-                 }
-                 .setNeutralButton("Cancel") { dialog, _ ->
-                     dialog.dismiss()
-                 }
+                }
+                .setNeutralButton("Cancel") { dialog, _ ->
+                    dialog.dismiss()
+                }
 
 
-             val dialog = builder.create()
-             dialog.show()
+            val dialog = builder.create()
+            dialog.show()
 
-         }
+        }
 
 
         takePictureLauncher = registerForActivityResult(
@@ -192,77 +191,161 @@ class DelException : AppCompatActivity(){
 //
 //                startActivity(Intent.createChooser(emailIntent, "Send email..."))
 //
-            updateException(exceptionList, DELNO)
-             }
-         }
+                updateException(exceptionList, DELNO)
+            }
+        }
 
 
 
-         btnSend.setOnClickListener {
-             try {
+        btnSend.setOnClickListener {
+            try {
 
-             exceptionList = ArrayList(partsList.filter { (it.Exception) })
+                exceptionList = ArrayList(partsList.filter { (it.Exception) })
 
-             // Clear the existing list before populating it
-             exceptionDetailsList.clear()
+                // Clear the existing list before populating it
+                exceptionDetailsList.clear()
 
-             exceptionList.forEach { it ->
-                 val pname = it.DESCRIPTION
-                 val eqty = it.EQTY
-                 var reason = "Unknown"
+                exceptionList.forEach { it ->
+                    val pname = it.DESCRIPTION
+                    val eqty = it.EQTY
+                    var reason = "Unknown"
 
-                 when (it.EReason) {
-                     1 -> reason = "Parts short"
-                     2 -> reason = "Parts incorrect"
-                     3 -> reason = "Parts damaged"
-                     4 -> reason = "Parts not bent/bent wrong"
-                     5 -> reason = "Over supplied"
-                     6 -> reason = "Incorrectly supplied"
-                     7 -> reason = "Parts not loaded"
-                     8 -> reason = "Contact Driver"
-                     9 -> reason = "Contact Customer"
-                 }
+                    when (it.EReason) {
+                        1 -> reason = "Parts short"
+                        2 -> reason = "Parts incorrect"
+                        3 -> reason = "Parts damaged"
+                        4 -> reason = "Parts not bent/bent wrong"
+                        5 -> reason = "Over supplied"
+                        6 -> reason = "Incorrectly supplied"
+                        7 -> reason = "Parts not loaded"
+                        8 -> reason = "Contact Driver"
+                        9 -> reason = "Contact Customer"
+                    }
 
-                 // Add exception details to the list
-                 exceptionDetailsList.add(ExceptionDetails(pname, eqty, reason))
-             }
-             println("exceptionDetailsList")
-             println(exceptionDetailsList)
+                    // Add exception details to the list
+                    exceptionDetailsList.add(ExceptionDetails(pname, eqty, reason))
+                }
+                println("exceptionDetailsList")
+                println(exceptionDetailsList)
 
-             if (cBPhoto.isChecked) {
-                 // Request camera permission if not granted
-                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                     ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), CAMERA_PERMISSION_CODE)
-                 } else {
-                     // Permission is already granted, proceed with camera usage
-                     val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                     if (takePictureIntent.resolveActivity(packageManager) != null) {
-                         val photoFile: File? = createImageFile() // Create a File object for the image
+                if (exceptionList.any {0 == it.EReason })
+                {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setMessage("Please select a reason for all exception")
+                    //    Toast.makeText(context,"Data capture canceled",Toast.LENGTH_LONG).show()
+                    builder.setIcon(android.R.drawable.ic_dialog_alert)
+                    builder.setPositiveButton("OK"){dialogInterface , which ->
+                    }
+                    val alertDialog: AlertDialog = builder.create()
 
+                    alertDialog.setCancelable(true)
+                    alertDialog.show()
 
-                         photoFile?.also {
-                             //val photoURI: Uri = FileProvider.getUriForFile(this, "com.yourapp.fileprovider", it)
-                             takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
-
-                             takePictureLauncher.launch(takePictureIntent)
-                         }
-                     }
-                 }
-
-             } else {
-                 updateException(exceptionList, DELNO)
-             }
-
-             } catch (e: Exception) {
-                 // Log the exception details
-                 Log.e("Exception", "Exception occurred: ${e.message}")
-                 e.printStackTrace()
-             }
-
-     }
+                }else {
 
 
-}
+                    if (cBPhoto.isChecked) {
+                        // Request camera permission if not granted
+                        if (ContextCompat.checkSelfPermission(
+                                this,
+                                Manifest.permission.CAMERA
+                            ) != PackageManager.PERMISSION_GRANTED
+                        ) {
+                            ActivityCompat.requestPermissions(
+                                this,
+                                arrayOf(Manifest.permission.CAMERA),
+                                CAMERA_PERMISSION_CODE
+                            )
+                        } else {
+                            // Permission is already granted, proceed with camera usage
+                            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                            if (takePictureIntent.resolveActivity(packageManager) != null) {
+                                val photoFile: File? =
+                                    createImageFile() // Create a File object for the image
+
+
+                                photoFile?.also {
+                                    //val photoURI: Uri = FileProvider.getUriForFile(this, "com.yourapp.fileprovider", it)
+                                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+
+                                    takePictureLauncher.launch(takePictureIntent)
+                                }
+                            }
+                        }
+
+                    } else {
+                        updateException(exceptionList, DELNO)
+                    }
+                }
+
+
+
+            } catch (e: Exception) {
+                // Log the exception details
+                Log.e("Exception", "Exception occurred: ${e.message}")
+                e.printStackTrace()
+            }
+
+        }
+
+        Log.e("Skull", "6")
+
+    }
+
+    private fun sendNotDel(DELNO: String, selectedReason: Int) {
+
+        Log.e("Skull", "4")
+        val repository = Repository()
+        val viewModelFactory = MainViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+        viewModel.pushNotDel(uniqueId,1, DELNO, selectedReason)
+
+
+//                     val bundle2 = Bundle()
+//                     val intent2 = Intent(this, Update::class.java)
+//                     intent2.putExtra("Status","Exc")
+//                     intent2.putExtra("DELNO",DELNO)
+//                     ContextCompat.startActivity(this, intent2, bundle2)
+
+//                     finish()
+//                     val i = Intent(this, MainActivity::class.java)
+//                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//                     startActivity(i)
+
+        //works
+
+
+
+        viewModel.myPost4.observe(this, Observer { response ->
+            if(response.isSuccessful){
+                Log.e("Skull", "5")
+                gotException(DELNO)
+//                             this.finish()
+//                             Log.d("Main", response.body().toString())
+//                             Log.d("Main", response.code().toString())
+//                             Log.d("Main", response.message().toString())
+                //run to post exception
+                this.finish()
+
+            }else {
+                Log.e("Skull", "5")
+                Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+                sendNotDel(DELNO, selectedReason)
+//                setContentView(R.layout.scary_screen)
+//                val tvError = findViewById<View>(R.id.tvError) as TextView
+//                tvError.text = response.code().toString()
+
+//                             Log.e("RETROFIT_ERROR", response.code().toString())
+//                             System.err.println("Got an exception! ")
+//                             val intent = Intent(baseContext, ConnFailed::class.java)
+//                             startActivity(intent)
+            }
+        })
+
+
+
+
+    }
 
 
     private fun sendEmailWithAttachment( DELNO: String) {
@@ -396,20 +479,7 @@ class DelException : AppCompatActivity(){
     }
 
     private fun updateException(exceptionList: ArrayList<Cell2>, DELNO: String) {
-        if (exceptionList.any {0 == it.EReason })
-        {
-            val builder = AlertDialog.Builder(this)
-            builder.setMessage("Please select a reason for all exception")
-            //    Toast.makeText(context,"Data capture canceled",Toast.LENGTH_LONG).show()
-            builder.setIcon(android.R.drawable.ic_dialog_alert)
-            builder.setPositiveButton("OK"){dialogInterface , which ->
-            }
-            val alertDialog: AlertDialog = builder.create()
 
-            alertDialog.setCancelable(true)
-            alertDialog.show()
-
-        }else{
 
             exceptionList.forEach {
                 var Pname = it.DESCRIPTION
@@ -423,25 +493,56 @@ class DelException : AppCompatActivity(){
                 viewModel.pushException(uniqueId,reason,eqty, Pname, DELNO)
 
 
-                viewModel.myResponse2.observe(this, Observer { response ->
-                    if(response.isSuccessful){
-
-//                        Log.d("Main", response.body().toString())
-//                        Log.d("Main", response.code().toString())
-//                        Log.d("Main", response.message().toString())
-                    }else {
-                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
-                        Log.e("RETROFIT_ERROR", response.code().toString())
-                        System.err.println("Got an exception! ")
-                        val intent = Intent(baseContext, ConnFailed::class.java)
-                        startActivity(intent)
-
-                    }
-                })
+                //Looking for one successful response currently.
+//                viewModel.myPost.observe(this, Observer { response ->
+//                    if(response.isSuccessful){
+//                        this.finish()
+////                        Log.d("Main", response.body().toString())
+////                        Log.d("Main", response.code().toString())
+////                        Log.d("Main", response.message().toString())
+//                    }else {
+//                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+//                        Log.e("RETROFIT_ERROR", response.code().toString())
+//                        System.err.println("Got an exception! ")
+//                        val intent = Intent(baseContext, ConnFailed::class.java)
+//                        startActivity(intent)
+//
+//                    }
+//                })
             }
 
-            this.finish()
-        }
+        viewModel.myPost.observe(this, Observer { response ->
+            if(response.isSuccessful){
+                gotException(DELNO)
+                finish()
+            }else {
+                updateException(exceptionList, DELNO)
+                Toast.makeText(this, response.code(), Toast.LENGTH_LONG).show()
+//                Log.e("RETROFIT_ERROR", response.code().toString())
+//                System.err.println("Got an exception! ")
+//                val intent = Intent(baseContext, ConnFailed::class.java)
+//                startActivity(intent)
+
+            }
+        })
+
+//            gotException(DELNO)
+//
+//
+//            finish()
+//                     val i = Intent(this, MainActivity::class.java)
+//                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//                     startActivity(i)
+
+    }
+
+    private fun gotException(DELNO: String) {
+
+        val bundle2 = Bundle()
+        val intent2 = Intent(baseContext, Update::class.java)
+        intent2.putExtra("Status","Exc")
+        intent2.putExtra("DELNO",DELNO)
+        startActivity(intent2, bundle2)
     }
 
     private fun conn(partsList: ArrayList<Cell2>, delno: String, adapter: ArrayAdapter<String>)    {

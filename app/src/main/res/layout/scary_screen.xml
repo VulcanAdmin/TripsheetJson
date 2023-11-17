@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="603dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="523dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="523dp"
+        android:layout_marginBottom="14dp"
+        android:text="DON'T TOUCH       SHOW HANCKE!"
+        android:textColor="#A61818"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠄⢀⠂⠠⠐⡀⢀⠂⠀⠄⠀⡀⠀⠀⠂⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⡀⠄⠂⠌⠠⢁⠂⠌⠄⡈⠄⠀⠁⠀⠄⠀⠈⠐⠈⡐⠠⢁⠊⠄⡐⠠⠀⠂⠤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠴⠋⠄⢂⠡⡐⢈⡐⠨⠐⠀⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⡀⠠⠁⠂⠌⠐⡀⠣⠌⡐⠠⢀⠙⠲⣄⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⢋⡐⢂⠌⣂⠢⠐⢂⠐⠀⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡀⠁⠄⢃⡐⠠⡑⣀⠢⠐⡈⠳⣄⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⢀⡾⢃⠌⢢⡐⠡⠂⠄⠂⠡⠀⠄⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠄⠀⠡⢐⠀⠆⡱⠠⡁⠌⡳⣄⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⣰⡏⠣⢌⡌⡡⢌⠡⠁⠌⠠⠁⠈⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠄⠂⠡⠐⢀⠊⠄⡡⢃⠰⡁⢆⠹⣆⠀⠀⠀ ⠀⠀⠀⠀⣰⢏⡰⢉⡒⢤⠑⡂⢂⠁⠂⡀⠁⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠂⠁⠐⢀⠈⡐⠄⣃⠱⡈⢆⠱⡘⣧⠀⠀ ⠀⠀⠀⢠⡿⢠⡘⢇⡸⠄⢣⠠⠄⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠠⠀⠤⡀⢇⠸⡘⡄⢣⢸⡇⠀ ⠀⠀⠀⣼⡃⢧⢘⣂⢒⡉⡐⠄⡈⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⢁⠂⡅⢊⠦⢱⡈⢇⡊⣧⠀ ⠀⠀⠀⣿⡘⣆⠣⣄⠣⡐⠰⢀⠠⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠂⡔⠡⠚⡤⡑⢮⡐⣿⡂ ⠀⠀⠀⣿⡔⣣⢚⠄⢣⠡⡈⠄⡀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠈⢀⡐⠠⣁⠳⠰⣉⢦⡑⣿⡁ ⠀⠀⠀⢿⡲⣅⠎⡘⣄⠣⠐⠤⡐⡰⢠⣡⣦⣶⣾⣷⣾⣷⣿⣷⣶⣦⣀⠣⡐⢄⠆⡰⢄⣆⣳⣼⣶⣿⣶⣷⣶⣦⣽⣖⣦⡁⠤⢠⠑⡄⣊⠱⢌⢲⣯⣿⠀ ⠀⠀⠀⢸⣷⣿⠠⣑⡦⢡⣏⢶⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣏⡱⢌⠲⣹⣮⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣇⢮⡐⢦⡑⢌⣺⣿⡇⠀ ⠀⠀⠀⠀⣿⣿⢀⣿⡜⣣⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡝⣌⠣⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡝⢦⣿⠠⣿⣿⠃⠀ ⠀⠀⠀⠀⢹⣿⠆⣿⣞⡱⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠖⡠⠣⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⡞⣥⣿⢸⣿⡏⠀⠀ ⠀⠀⠀⠀⠀⢻⡜⣿⢦⡙⣛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡧⣟⠄⠡⠑⢺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢣⡟⠴⣿⣸⡿⠀⠀⠀ ⠀⠀⠀⠀⠀⠘⣯⣿⢣⡘⠤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢁⣯⠀⠑⡈⢍⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠐⣌⠳⣿⣽⠃⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠸⣿⢣⡘⠤⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢁⠋⢄⠀⠀⠀⣌⠓⡍⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⡁⢆⢱⣿⠃⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⣿⡧⡘⠤⢃⠚⠻⣿⣿⣿⣿⣿⣿⣿⠿⢛⠱⠴⢈⠐⣀⢠⣄⢀⣀⢉⡡⠆⠈⠛⠿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠠⠁⡌⢼⣿⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⢻⣷⣉⠶⣁⠎⡡⢐⡉⢉⣉⡉⡁⠀⠐⠘⠀⣔⢈⣄⣷⣾⣿⣷⣮⡺⡅⠀⢂⠈⣐⠢⣬⡉⡉⣉⢋⠀⡀⢂⠁⢆⢸⣾⣿⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠘⢿⣮⣞⡴⣩⢖⣡⢚⡤⡡⢆⠡⠌⠂⢌⠂⠼⢮⣿⣿⣿⣿⣿⣿⣿⣿⠂⡄⠌⢄⠒⡠⢁⠥⢢⠆⡜⡰⣌⣼⣶⣻⣿⠃⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⢿⣯⣯⣽⣷⣾⡽⣌⢣⠍⡜⢠⢈⠒⢯⣿⠟⣛⣍⣛⣿⢛⣽⠃⡔⢊⡔⢪⡑⢮⣼⣧⣾⣽⣷⣿⡿⠟⠋⠁⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⢙⢻⣿⡽⣎⠞⡬⡑⢎⡘⣄⠢⡉⠥⢉⢋⠄⡃⡤⢉⡔⢣⠜⣥⢞⣯⣿⡿⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡟⣧⡟⣴⢩⡖⢰⡄⢣⠐⢢⡌⡄⢢⠑⡄⢣⡜⢢⠛⣴⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣿⣿⣿⣷⣣⢏⡖⣣⢜⣢⢣⡒⣤⠱⡌⢦⡑⢮⢴⣫⣾⣿⣿⣷⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠋⠿⣿⡿⠿⣷⣎⣿⣵⣯⣖⣯⣿⣾⣹⣾⠷⢿⣿⠟⠹⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣇⠐⣿⡄⠀⢈⣿⠀⠀⠈⣿⠁⠀⠀⣿⠁⠀⠀⣿⠈⣾⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⠦⢿⣦⣀⣀⣿⠀⠀⠀⣿⡀⠀⠀⣿⣀⣀⣼⡷⢸⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣎⣼⠇⠈⢉⣿⠉⠙⠉⣯⠉⠙⠉⣿⠉⠀⢀⣿⣰⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⡿⢷⡶⢶⣿⣄⣀⣠⣿⣤⣀⣤⣿⡶⣶⣾⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢻⣧⣝⡲⡜⣬⢋⡗⡬⣃⢯⡱⢆⡳⡼⣼⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠓⠻⠶⠿⠼⠷⠾⠶⠿⠚⠛⠛⢁⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="296dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="492dp"
+        android:layout_marginEnd="492dp"
+        android:text="..."
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+</androidx.constraintlayout.widget.ConstraintLayout>

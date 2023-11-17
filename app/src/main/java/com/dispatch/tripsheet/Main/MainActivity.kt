@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
+        progressBar_cyclic.visibility = View.VISIBLE
 
         recyclerViewTripsheetlist.layoutManager = LinearLayoutManager(this)
 
@@ -71,11 +72,16 @@ class MainActivity : AppCompatActivity() {
         viewModel.getTripsheet(uniqueId)
 
 
+
+
+
+
         //Log.d("API", "Connect to intranet")
 
 
         viewModel.myResponse.observe(this, Observer { response ->
             if(response.isSuccessful){
+                progressBar_cyclic.visibility = View.INVISIBLE
 
 //                Log.d("Main", response.body().toString())
 //                Log.d("Main", response.code().toString())

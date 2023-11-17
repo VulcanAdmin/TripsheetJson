@@ -28,10 +28,10 @@ interface API {
 
 
     @POST("/?q=4")
-    suspend fun pushDeliveredChecked(
+    suspend fun pushDelivered(
         @Query("ID") uniqueId: String,
         @Query("p1") DELIVERED: Int = 1,
-        @Query("p2") checked: Int = 1,
+        @Query("p2") checked: Int,
         @Query("p3") lat: Double,
         @Query("p4") long: Double,
         @Query("p5") delno: String
@@ -39,15 +39,14 @@ interface API {
 
 
     @POST("/?q=4")
-    suspend fun pushDeliveredUnchecked(
+    suspend fun pushExcept(
         @Query("ID") uniqueId: String,
         @Query("p1") DELIVERED: Int = 2,
-        @Query("p2") checked: Int = 2,
+        @Query("p2") checked: Int = 1,
         @Query("p3") lat: Double,
         @Query("p4") long: Double,
         @Query("p5") delno: String
     ): Response<delData>
-
 
     @POST("/?q=5")
     suspend fun pushOnTheWay(

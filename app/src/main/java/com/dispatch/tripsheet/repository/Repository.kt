@@ -18,12 +18,12 @@ class Repository {
         return RetrofitInstance.api.pushException(uniqueId, EReason, EQTY, DESCRIPTION, delno)
     }
 
-    suspend fun pushDeliveredChecked(uniqueId: String, DELIVERED: Int = 1, checked: Int = 1,lat: Double, long: Double, delno: String): Response<delData> {
-        return RetrofitInstance.api.pushDeliveredChecked(uniqueId, DELIVERED, checked, lat, long, delno)
+    suspend fun pushDelivered(uniqueId: String, DELIVERED: Int = 1, checked: Int,lat: Double, long: Double, delno: String): Response<delData> {
+        return RetrofitInstance.api.pushDelivered(uniqueId, DELIVERED, checked, lat, long, delno)
     }
 
-    suspend fun pushDeliveredUnchecked(uniqueId: String, DELIVERED: Int = 2, checked: Int = 2,lat: Double, long: Double, delno: String): Response<delData> {
-        return RetrofitInstance.api.pushDeliveredUnchecked(uniqueId, DELIVERED, checked, lat, long, delno)
+    suspend fun pushExcept(uniqueId: String, DELIVERED: Int = 2, checked: Int = 1,lat: Double, long: Double, delno: String): Response<delData> {
+        return RetrofitInstance.api.pushExcept(uniqueId, DELIVERED, checked, lat, long, delno)
     }
 
     suspend fun pushOnTheWay(uniqueId: String, DELIVERED: Int = 5, mailOTW: Int = 1,lat: Double, long: Double, delno: String): Response<otwData> {

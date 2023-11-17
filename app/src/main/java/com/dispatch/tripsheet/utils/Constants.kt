@@ -5,7 +5,10 @@ class Constants {
 
     companion object{
 
-        val versionDisplay = "Version:3.3 - Cupcake 2"
+        val versionDisplay = "Version:3.47 - Reason before Photo"
+        //testing in the field
+
+
         val uniqueId: String = "Tab04"
         val BASE_URL = "http://intranet.vulcansteel.localnet:888/"
     }

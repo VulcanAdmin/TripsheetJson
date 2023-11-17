@@ -88,7 +88,7 @@ class TableViewAdapter(
             txtWeight.text = modal.WEIGHT.toString()
             txtInvoice.text = modal.INVOICE.toString()
 
-         }
+        }
 
 
 
@@ -310,11 +310,13 @@ class TableViewAdapter(
             tvExcondelv.text = "Total Exceptions: " + y
             tvTotalleft.text ="Delivery Notes uncomplete: " +c
 
-            val bundle2 = Bundle()
-            val intent2 = Intent(context, Update::class.java)
-            intent2.putExtra("Status","Exc")
-            intent2.putExtra("DELNO",modal.DELNO)
-            startActivity(context, intent2, bundle2)
+
+            //move this to DelException and don't use it here.
+//            val bundle2 = Bundle()
+//            val intent2 = Intent(context, Update::class.java)
+//            intent2.putExtra("Status","Exc")
+//            intent2.putExtra("DELNO",modal.DELNO)
+//            startActivity(context, intent2, bundle2)
 
 
             val bundle = Bundle()

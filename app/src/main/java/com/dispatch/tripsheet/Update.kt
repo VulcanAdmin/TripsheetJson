@@ -2,8 +2,8 @@ package com.dispatch.tripsheet
 
 import android.location.Location
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -48,7 +48,7 @@ class Update : AppCompatActivity(){
         }
 
 
-        Log.e("Skull", "Inside Update")
+//        Log.e("Skull", "Inside Update")
         val myLocation = MyLocation()
         myLocation.getLocation(this, locationResult)
 
@@ -93,7 +93,6 @@ class Update : AppCompatActivity(){
                 viewModel.pushDelivered(uniqueId,1,Checked, lat, long, DELNO)
                 viewModel. myPost2.observe(this, Observer { response ->
                     if(response.isSuccessful){
-
 //                        Cupcake = 1
 //                        Log.e("Skull", "Success")
 //                        Log.e("Skull", response.body().toString())
@@ -101,13 +100,12 @@ class Update : AppCompatActivity(){
 //                        Log.e("Skull", response.message().toString())
                         finish()
                     }else {
-                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
-                        updatesql(lat, long)
-//                        setContentView(R.layout.scary_screen)
-//                        val tvError = findViewById<View>(R.id.tvError) as TextView
-//                        tvError.text = response.code().toString()
+//                        updatesql(lat, long)
 
-//                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+                        setContentView(R.layout.scary_screen)
+                        val tvError = findViewById<View>(R.id.tvError) as TextView
+                        tvError.text = response.code().toString()
+
 //                        Log.e("RETROFIT_ERROR", response.code().toString())
 //                        System.err.println("Got an exception! ")
 //                        val intent = Intent(baseContext, ConnFailed::class.java)
@@ -117,16 +115,16 @@ class Update : AppCompatActivity(){
                 })
             }
             "Exc" -> {
-                Log.e("Skull", "7")
+//                Log.e("Skull", "7")
                 val repository = Repository()
                 val viewModelFactory = MainViewModelFactory(repository)
                 viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
                 viewModel.pushExcept(uniqueId,2,1, lat, long, DELNO)
-                Log.e("Skull", "8")
+//                Log.e("Skull", "8")
                 viewModel. myPost2.observe(this, Observer { response ->
-                    Log.e("Skull", "8.5")
+//                    Log.e("Skull", "8.5")
                     if(response.isSuccessful){
-                        Log.e("Skull", "9")
+//                        Log.e("Skull", "9")
 //                        Cupcake = 1
 //                        Log.d("Main", response.body().toString())
 //                        Log.d("Main", response.code().toString())
@@ -137,14 +135,11 @@ class Update : AppCompatActivity(){
 
                         finish()
                     }else {
-                        Log.e("Skull", "9")
-                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
-                        updatesql(lat, long)
-//                        setContentView(R.layout.scary_screen)
-//                        val tvError = findViewById<View>(R.id.tvError) as TextView
-//                        tvError.text = response.code().toString()
+//                        updatesql(lat, long)
 
-//                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+                        setContentView(R.layout.scary_screen)
+                        val tvError = findViewById<View>(R.id.tvError) as TextView
+                        tvError.text = response.code().toString()
 //                        Log.e("RETROFIT_ERROR", response.code().toString())
 //                        System.err.println("Got an exception! ")
 //                        val intent = Intent(baseContext, ConnFailed::class.java)
@@ -167,13 +162,11 @@ class Update : AppCompatActivity(){
 //                        Log.d("Main", response.message().toString())
                         finish()
                     }else {
-                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
-                        updatesql(lat, long)
-//                        setContentView(R.layout.scary_screen)
-//                        val tvError = findViewById<View>(R.id.tvError) as TextView
-//                        tvError.text = response.code().toString()
+//                        updatesql(lat, long)
 
-//                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+                        setContentView(R.layout.scary_screen)
+                        val tvError = findViewById<View>(R.id.tvError) as TextView
+                        tvError.text = response.code().toString()
 //                        Log.e("RETROFIT_ERROR", response.code().toString())
 //                        System.err.println("Got an exception! ")
 //                        val intent = Intent(baseContext, ConnFailed::class.java)
@@ -196,13 +189,11 @@ class Update : AppCompatActivity(){
 //                        Log.e("Skull", response.message().toString())
                         finish()
                     }else {
-                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
-                        updatesql(lat, long)
-//                        setContentView(R.layout.scary_screen)
-//                        val tvError = findViewById<View>(R.id.tvError) as TextView
-//                        tvError.text = response.code().toString()
+//                        updatesql(lat, long)
 
-//                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+                        setContentView(R.layout.scary_screen)
+                        val tvError = findViewById<View>(R.id.tvError) as TextView
+                        tvError.text = response.code().toString()
 //                        Log.e("RETROFIT_ERROR", response.code().toString())
 //                        System.err.println("Got an exception! ")
 //                        val intent = Intent(baseContext, ConnFailed::class.java)
@@ -216,7 +207,6 @@ class Update : AppCompatActivity(){
                 val viewModelFactory = MainViewModelFactory(repository)
                 viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
                 viewModel.pushDroppedPallets(uniqueId,Pallet, DELNO)
-                Toast.makeText(applicationContext, "Here is how many pallets where passed ${Pallet}", Toast.LENGTH_SHORT).show()
 
                 viewModel. myPost5.observe(this, Observer { response ->
                     if(response.isSuccessful){
@@ -226,13 +216,11 @@ class Update : AppCompatActivity(){
 //                        Log.d("Main", response.message().toString())
                         finish()
                     }else {
-                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
-                        updatesql(lat, long)
-//                        setContentView(R.layout.scary_screen)
-//                        val tvError = findViewById<View>(R.id.tvError) as TextView
-//                        tvError.text = response.code().toString()
+//                        updatesql(lat, long)
 
-//                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+                        setContentView(R.layout.scary_screen)
+                        val tvError = findViewById<View>(R.id.tvError) as TextView
+                        tvError.text = response.code().toString()
 //                        Log.e("RETROFIT_ERROR", response.code().toString())
 //                        System.err.println("Got an exception! ")
 //                        val intent = Intent(baseContext, ConnFailed::class.java)
@@ -247,7 +235,6 @@ class Update : AppCompatActivity(){
                 val viewModelFactory = MainViewModelFactory(repository)
                 viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
                 viewModel.pushCollectPallets(uniqueId, Pallet, DELNO)
-                Toast.makeText(applicationContext, "Here is how many pallets where passed ${Pallet}", Toast.LENGTH_SHORT).show()
 
                 viewModel. myPost5.observe(this, Observer { response ->
                     if(response.isSuccessful){
@@ -257,13 +244,11 @@ class Update : AppCompatActivity(){
 //                        Log.d("Main", response.message().toString())
                         finish()
                     }else {
-                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
-                        updatesql(lat, long)
-//                        setContentView(R.layout.scary_screen)
-//                        val tvError = findViewById<View>(R.id.tvError) as TextView
-//                        tvError.text = response.code().toString()
+//                        updatesql(lat, long)
 
-//                        Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+                        setContentView(R.layout.scary_screen)
+                        val tvError = findViewById<View>(R.id.tvError) as TextView
+                        tvError.text = response.code().toString()
 //                        Log.e("RETROFIT_ERROR", response.code().toString())
 //                        System.err.println("Got an exception! ")
 //                        val intent = Intent(baseContext, ConnFailed::class.java)

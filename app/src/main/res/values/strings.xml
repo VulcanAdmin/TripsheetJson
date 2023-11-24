@@ -19,7 +19,7 @@
     <string name="dialogPallet">Dropperd pallets.</string>
     <string name="dialogTitleMap">Open Map</string>
     <string name="dialogMessage">Are you sure you wish to capture this delivery as sucsessfully delivered?</string>
-    <string name="partName">Part name</string>
+    <string name="partNumber">Part number</string>
     <string name="partQTY">QTY</string>
     <string name="cbExc">Exc</string>
     <string name="partReason">Reason</string>
@@ -42,11 +42,13 @@
         <item>They were closed</item>
         <item>Dispatch said not to deliver</item>
         <item>Not Loaded</item>
+        <item>I did not have enough time</item>
     </string-array>
     <integer-array name="notDelv_reasons_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
     </integer-array>
 
 </resources>

@@ -138,9 +138,11 @@ class MainActivity : AppCompatActivity() {
                 // Pass the data on
                 populatespinner(tripsheetlist, adapter)
             }else {
+//                Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+//                conn(adapter)
+
                 val intent = Intent(baseContext, ConnFailed::class.java)
                 startActivity(intent)
-                Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
                 Log.e("RETROFIT_ERROR", response.code().toString())
             }
         })

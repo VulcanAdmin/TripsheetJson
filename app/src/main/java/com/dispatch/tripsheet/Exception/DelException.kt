@@ -30,7 +30,6 @@ import com.dispatch.tripsheet.Update
 import com.dispatch.tripsheet.model.Cell2
 import com.dispatch.tripsheet.model.ExceptionDetails
 import com.dispatch.tripsheet.repository.Repository
-import com.dispatch.tripsheet.utils.ConnFailed
 import com.example.retrofittest.MainViewModelFactory
 import com.example.retrofittest.utils.Constants.Companion.uniqueId
 import kotlinx.android.synthetic.main.activity_ex_form.*
@@ -129,7 +128,7 @@ class DelException : AppCompatActivity(){
                 .setPositiveButton("OK") { _, _ ->
 
                     Log.e("Skull", "3")
-                    val selectedReason = resources.getIntArray(R.array.notDelv_reasons_values)[spinnerReason.selectedItemPosition]
+                    val selectedReason = resources.getIntArray(R.array.notDelv_reasons_values)[spinnerReason.selectedItemPosition] //not optimal but used for flexibility
                     sendNotDel(DELNO, selectedReason)
 
 
@@ -602,10 +601,11 @@ class DelException : AppCompatActivity(){
                     adapter,
                     hdrcbExc
                 ) } }else {
-                Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(baseContext, ConnFailed::class.java)
-                startActivity(intent)
+                Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
+                conn(partsList, delno, adapter)
+//                val intent = Intent(baseContext, ConnFailed::class.java)
+//                startActivity(intent)
             }
 
         })

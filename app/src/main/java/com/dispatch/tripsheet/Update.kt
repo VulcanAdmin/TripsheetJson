@@ -57,16 +57,17 @@ class Update : AppCompatActivity(){
 
     }
 
-//    private fun verify() {
+//    private fun verify(DELNO) {
 //
-//    if(Cupcake==0){
-//        println("running again")
-//        println("running again")
-//        println("running again")
-//        println("running again")
-//        println("running again")
-//        println("running again")
-//        Log.i("API", "Running updatesql again")
+//        val repository = Repository()
+//        val viewModelFactory = MainViewModelFactory(repository)
+//        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+//        viewModel.getException(uniqueId, DELNO)
+//    if(status == 0){
+//
+//
+//    } else{
+//
 //        updatesql(lat, long)}
 //
 //    }

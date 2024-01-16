@@ -5,8 +5,10 @@ class Constants {
 
     companion object{
 
-        val versionDisplay = "Version:3.62 - Scare me outside"
+        val versionDisplay = "Version:3.7.5 - GPS only"
         //testing in the field
+
+        // need to investigate crash when api disconnect mid post
 
 
         val uniqueId: String = "Tab01"

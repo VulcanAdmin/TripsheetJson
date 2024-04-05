@@ -23,7 +23,14 @@ import com.dispatch.tripsheet.R
 import com.dispatch.tripsheet.Update
 import com.dispatch.tripsheet.model.Cell
 import com.dispatch.tripsheet.utils.AddressChange
-import kotlinx.android.synthetic.main.table_list_item.view.*
+import kotlinx.android.synthetic.main.table_list_item.view.txtCompany
+import kotlinx.android.synthetic.main.table_list_item.view.txtDElNote
+import kotlinx.android.synthetic.main.table_list_item.view.txtInvoice
+import kotlinx.android.synthetic.main.table_list_item.view.txtWOrder
+import kotlinx.android.synthetic.main.table_list_item.view.txtWeight
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 
 class TableViewAdapter(
@@ -80,13 +87,15 @@ class TableViewAdapter(
             setContentBg(txtWeight)
             setContentBg(txtInvoice)
 
-            modal.WEIGHT = Math.round(modal.WEIGHT * 10.0) / 10.0
+         //   modal.WEIGHT = Math.round(modal.WEIGHT * 1.0) / 1.0 //more zero's means more decimals values - *10 *100 *1000
 
             txtWOrder.text = modal.WONUMBER.toString()
             txtDElNote.text = modal.DELNO.toString()
             txtCompany.text = modal.CUSTOMER //company
-            txtWeight.text = modal.WEIGHT.toString()
+            txtWeight.text = modal.WEIGHT.toInt().toString()
+            //txtWeight.text = ceil(modal.WEIGHT).toInt() .toString()
             txtInvoice.text = modal.INVOICE.toString()
+
 
         }
 
@@ -126,6 +135,10 @@ class TableViewAdapter(
             txtbtnClear.setOnClickListener {
                 confirmclear(modal)
             }
+
+            btnExtra.setOnClickListener {
+                extEmail(modal)
+            }
         }
         //To change the textbox based on delivery status
 
@@ -148,6 +161,58 @@ class TableViewAdapter(
         }
 
 
+    }
+
+    private fun extEmail(modal: Cell) {
+        promptUserForNumberOfParts { numberOfParts ->
+            // Construct the email body here based on numberOfParts
+            val emailBody = StringBuilder()
+
+            // Data that appears only once
+            val currentDate = SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault()).format(Date())
+            emailBody.append("Collected from Customer - ${modal.CUSTOMER}\n")
+            emailBody.append("Driver - ${modal.DRIVER}\n")
+            emailBody.append("Time - $currentDate\n\n")
+
+            // Loop numberOfParts times for the repeating part of the email
+            repeat(numberOfParts) {
+                // Here, add the repeating parts, replace the placeholders with actual data as needed
+                emailBody.append("For Customer -  \n")
+                emailBody.append("Job Number -  \n")
+                emailBody.append("Part Number -  \n")
+                emailBody.append("Quantity -  \n\n")
+            }
+
+            // Proceed to configure the rest of your email intent here
+            val emailIntent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_EMAIL, arrayOf("logistics@vulcansteel.co.za"))
+                putExtra(Intent.EXTRA_SUBJECT, "Extra from: ${modal.CUSTOMER}")
+                putExtra(Intent.EXTRA_TEXT, emailBody.toString())
+            }
+
+            // Start the email activity with the chooser
+            startActivity(context, Intent.createChooser(emailIntent, "Send email..."), null)
+        }
+    }
+
+
+    //Activity import might be wrong
+    private fun promptUserForNumberOfParts(onNumberReceived: (Int) -> Unit) {
+        val editText = EditText(context).apply {
+            inputType = InputType.TYPE_CLASS_NUMBER
+            hint = "Enter number"
+        }
+
+        AlertDialog.Builder(context)
+            .setTitle("Enter Number of Unique Parts")
+            .setView(editText)
+            .setPositiveButton("OK") { dialog, which ->
+                val number = editText.text.toString().toIntOrNull() ?: 0
+                onNumberReceived(number)
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
     }
 
     private fun confirmpallet(modal: Cell) {
@@ -407,6 +472,7 @@ class TableViewAdapter(
         val txtbtnOtW:Button = itemView.findViewById<Button>(R.id.btnOnTheWay)
         val txtbtnPallet:Button = itemView.findViewById<Button>(R.id.btnPallet)
         val txtbtnClear:Button = itemView.findViewById<Button>(R.id.btnClear)
+        val btnExtra:Button = itemView.findViewById<Button>(R.id.btnExtra)
     }
 
     private fun setHeaderBg(view: View) {

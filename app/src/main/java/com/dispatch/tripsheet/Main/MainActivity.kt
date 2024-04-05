@@ -15,16 +15,31 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.dispatch.tripsheet.MainViewModel
 import com.dispatch.tripsheet.R
+import com.dispatch.tripsheet.api.MainViewModel
+import com.dispatch.tripsheet.api.MainViewModelFactory
 import com.dispatch.tripsheet.databinding.ActivityMainBinding
 import com.dispatch.tripsheet.model.Cell
 import com.dispatch.tripsheet.repository.Repository
 import com.dispatch.tripsheet.utils.ConnFailed
-import com.example.retrofittest.MainViewModelFactory
+import com.dispatch.tripsheet.utils.Extra
 import com.example.retrofittest.utils.Constants.Companion.uniqueId
 import com.example.retrofittest.utils.Constants.Companion.versionDisplay
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.btnExtra
+import kotlinx.android.synthetic.main.activity_main.btnRefresh
+import kotlinx.android.synthetic.main.activity_main.btntripsheet1
+import kotlinx.android.synthetic.main.activity_main.btntripsheet2
+import kotlinx.android.synthetic.main.activity_main.btntripsheet3
+import kotlinx.android.synthetic.main.activity_main.btntripsheet4
+import kotlinx.android.synthetic.main.activity_main.btntripsheet5
+import kotlinx.android.synthetic.main.activity_main.progressBar_cyclic
+import kotlinx.android.synthetic.main.activity_main.recyclerViewTripsheetlist
+import kotlinx.android.synthetic.main.activity_main.spnDriver
+import kotlinx.android.synthetic.main.activity_main.tvConfirmdelv
+import kotlinx.android.synthetic.main.activity_main.tvExcondelv
+import kotlinx.android.synthetic.main.activity_main.tvHeader
+import kotlinx.android.synthetic.main.activity_main.tvTotalleft
+import java.lang.Math.ceil
 
 
 class MainActivity : AppCompatActivity() {
@@ -47,9 +62,14 @@ class MainActivity : AppCompatActivity() {
         conn(adapter) // tripsheet list is filled
 
 
-    btnRefresh.setOnClickListener {
-        finish()
-        startActivity(intent)
+        btnRefresh.setOnClickListener {
+            finish()
+            startActivity(intent)
+        }
+
+        btnExtra.setOnClickListener {
+            val intent = Intent(baseContext, Extra::class.java)
+            startActivity(intent)
         }
 
         var doubleClick: Boolean? = false
@@ -110,7 +130,8 @@ class MainActivity : AppCompatActivity() {
                         val DRIVER = items[i].DRIVER ?: "N/A"
 
                         // Weight of delivery
-                        val WEIGHT = items[i].WEIGHT ?: "N/A"
+//                        val WEIGHT = Math.round(items[i].WEIGHT  * 1000.0) / 1000.0 //more zero's means more decimals values - *10 *100 *1000 ?: "N/A"
+                        val WEIGHT = ceil(items[i].WEIGHT)  //Round up
 
                         // Status of delivery
                         val DELIVERED = items[i].DELIVERED ?: "N/A"

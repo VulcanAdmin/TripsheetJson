@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/txtWOrder"
-        android:layout_width="140dp"
+        android:layout_width="130dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@drawable/table_content_cell_bg"
@@ -21,7 +21,7 @@
 
     <TextView
         android:id="@+id/txtDElNote"
-        android:layout_width="130dp"
+        android:layout_width="132.5dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@drawable/table_content_cell_bg"
@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/txtCompany"
-        android:layout_width="220dp"
+        android:layout_width="225dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@drawable/table_content_cell_bg"
@@ -48,7 +48,7 @@
 
     <TextView
         android:id="@+id/txtInvoice"
-        android:layout_width="140dp"
+        android:layout_width="117.5dp"
         android:layout_height="match_parent"
         android:background="@drawable/table_content_cell_bg"
         android:foregroundGravity="center_horizontal"
@@ -60,7 +60,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnOnTheWay"
-        android:layout_width="54.5dp"
+        android:layout_width="59.5dp"
         android:layout_height="match_parent"
         android:background="@drawable/table_header_cell_bg"
         android:textAlignment="center"
@@ -70,7 +70,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnPallet"
-        android:layout_width="54.5dp"
+        android:layout_width="59.5dp"
         android:layout_height="match_parent"
         android:background="@drawable/table_header_cell_bg"
         android:textAlignment="center"
@@ -79,8 +79,18 @@
         android:textSize="19sp" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnExtra"
+        android:layout_width="53dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/table_header_cell_bg"
+        android:textAlignment="center"
+        android:text="@string/btnEx"
+        android:textColor="@color/black"
+        android:textSize="19sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnComplete"
-        android:layout_width="164.5dp"
+        android:layout_width="159.5dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@drawable/table_header_cell_bg"
@@ -91,7 +101,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnException"
-        android:layout_width="164.5dp"
+        android:layout_width="159.5dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@drawable/table_header_cell_bg"
@@ -102,7 +112,7 @@
 
     <TextView
         android:id="@+id/txttvdone"
-        android:layout_width="45dp"
+        android:layout_width="41dp"
         android:layout_height="match_parent"
         android:background="@drawable/table_content_cell_bg"
         android:foregroundGravity="center_horizontal"
@@ -114,7 +124,7 @@
 
     <TextView
         android:id="@+id/txtWeight"
-        android:layout_width="120.5dp"
+        android:layout_width="90.5dp"
         android:layout_height="match_parent"
         android:layout_gravity="top"
         android:background="@drawable/table_content_cell_bg"
@@ -127,7 +137,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnClear"
-        android:layout_width="45dp"
+        android:layout_width="52dp"
         android:layout_height="match_parent"
         android:background="@drawable/table_header_cell_bg"
         android:textAlignment="center"

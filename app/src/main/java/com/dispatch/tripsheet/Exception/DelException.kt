@@ -12,7 +12,11 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.Spinner
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -24,20 +28,24 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dispatch.tripsheet.Main.MainActivity
-import com.dispatch.tripsheet.MainViewModel
 import com.dispatch.tripsheet.R
 import com.dispatch.tripsheet.Update
+import com.dispatch.tripsheet.api.MainViewModel
+import com.dispatch.tripsheet.api.MainViewModelFactory
 import com.dispatch.tripsheet.model.Cell2
 import com.dispatch.tripsheet.model.ExceptionDetails
 import com.dispatch.tripsheet.repository.Repository
-import com.example.retrofittest.MainViewModelFactory
 import com.example.retrofittest.utils.Constants.Companion.uniqueId
-import kotlinx.android.synthetic.main.activity_ex_form.*
+import kotlinx.android.synthetic.main.activity_ex_form.hdrcbExc
+import kotlinx.android.synthetic.main.activity_ex_form.recyclerViewPartlist
+import kotlinx.android.synthetic.main.activity_ex_form.tvDate
+import kotlinx.android.synthetic.main.activity_ex_form.tvDriver
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
 
 
 /// Check reason before photo check!
@@ -165,7 +173,7 @@ class DelException : AppCompatActivity(){
                     Toast.makeText(this, "Image URI is null", Toast.LENGTH_SHORT).show()
                 }
 
-
+/*
 
                 // Proceed with sending the email
                 //sendEmailWithAttachment(imageUri)
@@ -190,6 +198,8 @@ class DelException : AppCompatActivity(){
 //
 //                startActivity(Intent.createChooser(emailIntent, "Send email..."))
 //
+
+ */
                 updateException(exceptionList, DELNO)
             }
         }

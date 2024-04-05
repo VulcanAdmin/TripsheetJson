@@ -16,7 +16,6 @@ interface API {
         @Query("p1") delno: String
     ): Response<List<Cell2>>
 
-
     @POST("/?q=3")
     suspend fun pushException(
         @Query("ID") uniqueId: String,
@@ -25,7 +24,6 @@ interface API {
         @Query("p3") DESCRIPTION: String,
         @Query("p4") delno: String
     ): Response<exData>
-
 
     @POST("/?q=4")
     suspend fun pushDelivered(
@@ -36,7 +34,6 @@ interface API {
         @Query("p4") long: Double,
         @Query("p5") delno: String
     ): Response<delData>
-
 
     @POST("/?q=4")
     suspend fun pushExcept(
@@ -58,7 +55,6 @@ interface API {
         @Query("p5") delno: String
     ): Response<otwData>
 
-
     @POST("/?q=6")
     suspend fun pushNotDel(
         @Query("ID") uniqueId: String,
@@ -67,14 +63,12 @@ interface API {
         @Query("p3") selectedReason: Int
     ): Response<notDelData>
 
-
     @POST("/?q=7")
-    suspend fun pushDroppedPallets(
+    suspend fun pushCollectPallets(
         @Query("ID") uniqueId: String,
         @Query("p1") pallet: Int,
         @Query("p2") delno: String
     ): Response<palletData>
-
 
     @POST("/?q=8")
     suspend fun pushClear(
@@ -84,7 +78,7 @@ interface API {
     ): Response<clearData>
 
     @POST("/?q=9")
-    suspend fun pushCollectPallets(
+    suspend fun pushDroppedPallets(
         @Query("ID") uniqueId: String,
         @Query("p1") pallet: Int,
         @Query("p2") delno: String

@@ -1,9 +1,16 @@
-package com.dispatch.tripsheet
+package com.dispatch.tripsheet.api
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dispatch.tripsheet.model.*
+import com.dispatch.tripsheet.model.Cell
+import com.dispatch.tripsheet.model.Cell2
+import com.dispatch.tripsheet.model.clearData
+import com.dispatch.tripsheet.model.delData
+import com.dispatch.tripsheet.model.exData
+import com.dispatch.tripsheet.model.notDelData
+import com.dispatch.tripsheet.model.otwData
+import com.dispatch.tripsheet.model.palletData
 import com.dispatch.tripsheet.repository.Repository
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -104,6 +111,17 @@ class MainViewModel(private val repository: Repository): ViewModel() {
         }
     }
 
+    fun pushCollectPallets(uniqueId: String, pallet: Int, delno: String) {
+        viewModelScope.launch {
+
+
+            val response = repository.pushCollectPallets(uniqueId, pallet, delno)
+            myPost5.value = response
+
+
+        }
+    }
+
     fun pushClear(uniqueId: String, DELIVERED: Int = 0, delno: String) {
         viewModelScope.launch {
 
@@ -115,15 +133,5 @@ class MainViewModel(private val repository: Repository): ViewModel() {
         }
     }
 
-    fun pushCollectPallets(uniqueId: String, pallet: Int, delno: String) {
-        viewModelScope.launch {
-
-
-            val response = repository.pushCollectPallets(uniqueId, pallet, delno)
-            myPost5.value = response
-
-
-        }
-    }
 
 }

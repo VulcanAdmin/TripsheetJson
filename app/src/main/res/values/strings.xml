@@ -5,8 +5,9 @@
     <string name="button1">Delivered</string>
     <string name="button2">Exception</string>
     <string name="btnOtW">⛟</string>
+    <string name="btnEx">✽</string>
     <string name="btnPallet">▥</string>
-    <string name="btnClear">x</string>
+    <string name="btnClear">𝐗</string>
     <string name="worder">W Order</string>
     <string name="delnote">Del Note</string>
     <string name="company">Company</string>

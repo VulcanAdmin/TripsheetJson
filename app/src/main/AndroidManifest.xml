@@ -23,6 +23,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tripsheet"
         android:screenOrientation="landscape">
+
+        <activity android:name=".utils.Extra"
+            android:screenOrientation="landscape"></activity>
         <activity android:name=".Exception.DelException"
             android:screenOrientation="landscape"></activity>
         <activity android:name=".utils.AddressChange"
@@ -31,6 +34,7 @@
             android:screenOrientation="landscape"></activity>
         <activity android:name=".Update"
             android:screenOrientation="landscape"></activity>
+
         <activity
             android:name=".Main.MainActivity"
             android:exported="true"

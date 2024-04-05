@@ -147,11 +147,10 @@
 
         <TextView
             android:id="@+id/txtWOrder"
-            android:layout_width="0dp"
+            android:layout_width="130dp"
             android:layout_height="match_parent"
             android:layout_gravity="top"
-            android:layout_weight="140"
-            android:background="@drawable/table_header_cell_bg"
+            android:background="@drawable/table_content_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/worder"
@@ -161,11 +160,10 @@
 
         <TextView
             android:id="@+id/txtDElNote"
-            android:layout_width="0dp"
+            android:layout_width="132.5dp"
             android:layout_height="match_parent"
             android:layout_gravity="top"
-            android:layout_weight="130"
-            android:background="@drawable/table_header_cell_bg"
+            android:background="@drawable/table_content_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/delnote"
@@ -175,12 +173,10 @@
 
         <TextView
             android:id="@+id/txtCompany"
-            android:layout_width="0dp"
+            android:layout_width="225dp"
             android:layout_height="match_parent"
-
             android:layout_gravity="top"
-            android:layout_weight="220"
-            android:background="@drawable/table_header_cell_bg"
+            android:background="@drawable/table_content_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/company"
@@ -191,49 +187,51 @@
 
         <TextView
             android:id="@+id/txtInvoice"
-            android:layout_width="0dp"
+            android:layout_width="117.5dp"
             android:layout_height="match_parent"
-
-            android:layout_weight="140"
-            android:background="@drawable/table_header_cell_bg"
+            android:background="@drawable/table_content_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:text="@string/invoice"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"  />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnOnTheWay"
-            android:layout_width="0dp"
+            android:layout_width="59.5dp"
             android:layout_height="match_parent"
-
-            android:layout_weight="55"
             android:background="@drawable/table_header_cell_bg"
-            android:text="@string/btnOtW"
             android:textAlignment="center"
+            android:text="@string/btnOtW"
             android:textColor="@color/black"
             android:textSize="19sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPallet"
-            android:layout_width="0dp"
+            android:layout_width="59.5dp"
             android:layout_height="match_parent"
-
-            android:layout_weight="55"
             android:background="@drawable/table_header_cell_bg"
-            android:text="@string/btnPallet"
             android:textAlignment="center"
+            android:text="@string/btnPallet"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnExtra"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/table_header_cell_bg"
+            android:textAlignment="center"
+            android:text="@string/btnEx"
             android:textColor="@color/black"
             android:textSize="19sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnComplete"
-            android:layout_width="0dp"
+            android:layout_width="159.5dp"
             android:layout_height="match_parent"
-
             android:layout_gravity="top"
-            android:layout_weight="165"
             android:background="@drawable/table_header_cell_bg"
 
             android:text="@string/button1"
@@ -242,11 +240,9 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnException"
-            android:layout_width="0dp"
+            android:layout_width="159.5dp"
             android:layout_height="match_parent"
-
             android:layout_gravity="top"
-            android:layout_weight="165"
             android:background="@drawable/table_header_cell_bg"
 
             android:text="@string/button2"
@@ -255,11 +251,9 @@
 
         <TextView
             android:id="@+id/txttvdone"
-            android:layout_width="0dp"
+            android:layout_width="41dp"
             android:layout_height="match_parent"
-
-            android:layout_weight="45"
-            android:background="@drawable/table_header_cell_bg"
+            android:background="@drawable/table_content_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:text=""
             android:textAlignment="center"
@@ -269,12 +263,10 @@
 
         <TextView
             android:id="@+id/txtWeight"
-            android:layout_width="0dp"
+            android:layout_width="90.5dp"
             android:layout_height="match_parent"
-
             android:layout_gravity="top"
-            android:layout_weight="120"
-            android:background="@drawable/table_header_cell_bg"
+            android:background="@drawable/table_content_cell_bg"
             android:foregroundGravity="center_horizontal"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/weight"
@@ -284,12 +276,11 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClear"
-            android:layout_width="0dp"
+            android:layout_width="52dp"
             android:layout_height="match_parent"
-            android:layout_weight="45"
             android:background="@drawable/table_header_cell_bg"
-            android:text="@string/btnClear"
             android:textAlignment="center"
+            android:text="@string/btnClear"
             android:textColor="@color/black"
             android:textSize="19sp" />
 

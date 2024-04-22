@@ -32,9 +32,9 @@ import com.dispatch.tripsheet.R
 import com.dispatch.tripsheet.Update
 import com.dispatch.tripsheet.api.MainViewModel
 import com.dispatch.tripsheet.api.MainViewModelFactory
+import com.dispatch.tripsheet.api.Repository
 import com.dispatch.tripsheet.model.Cell2
 import com.dispatch.tripsheet.model.ExceptionDetails
-import com.dispatch.tripsheet.repository.Repository
 import com.example.retrofittest.utils.Constants.Companion.uniqueId
 import kotlinx.android.synthetic.main.activity_ex_form.hdrcbExc
 import kotlinx.android.synthetic.main.activity_ex_form.recyclerViewPartlist

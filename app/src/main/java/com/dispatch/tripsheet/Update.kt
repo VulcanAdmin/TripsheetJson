@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.dispatch.tripsheet.api.MainViewModel
 import com.dispatch.tripsheet.api.MainViewModelFactory
-import com.dispatch.tripsheet.repository.Repository
+import com.dispatch.tripsheet.api.Repository
 import com.dispatch.tripsheet.utils.MyLocation
 import com.example.retrofittest.utils.Constants.Companion.uniqueId
 

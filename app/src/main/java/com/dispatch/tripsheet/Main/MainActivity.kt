@@ -18,9 +18,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dispatch.tripsheet.R
 import com.dispatch.tripsheet.api.MainViewModel
 import com.dispatch.tripsheet.api.MainViewModelFactory
+import com.dispatch.tripsheet.api.Repository
 import com.dispatch.tripsheet.databinding.ActivityMainBinding
 import com.dispatch.tripsheet.model.Cell
-import com.dispatch.tripsheet.repository.Repository
 import com.dispatch.tripsheet.utils.ConnFailed
 import com.dispatch.tripsheet.utils.Extra
 import com.example.retrofittest.utils.Constants.Companion.uniqueId
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
 
                         // Weight of delivery
 //                        val WEIGHT = Math.round(items[i].WEIGHT  * 1000.0) / 1000.0 //more zero's means more decimals values - *10 *100 *1000 ?: "N/A"
-                        val WEIGHT = ceil(items[i].WEIGHT)  //Round up
+                        val WEIGHT = ceil(items[i].WEIGHT) //Round up
 
                         // Status of delivery
                         val DELIVERED = items[i].DELIVERED ?: "N/A"

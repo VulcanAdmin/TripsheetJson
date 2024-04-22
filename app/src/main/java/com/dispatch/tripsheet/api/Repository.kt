@@ -1,7 +1,13 @@
-package com.dispatch.tripsheet.repository
+package com.dispatch.tripsheet.api
 
-import com.dispatch.tripsheet.api.RetrofitInstance
-import com.dispatch.tripsheet.model.*
+import com.dispatch.tripsheet.model.Cell
+import com.dispatch.tripsheet.model.Cell2
+import com.dispatch.tripsheet.model.clearData
+import com.dispatch.tripsheet.model.delData
+import com.dispatch.tripsheet.model.exData
+import com.dispatch.tripsheet.model.notDelData
+import com.dispatch.tripsheet.model.otwData
+import com.dispatch.tripsheet.model.palletData
 import retrofit2.Response
 
 class Repository {

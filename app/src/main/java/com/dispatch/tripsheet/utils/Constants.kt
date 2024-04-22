@@ -5,7 +5,7 @@ class Constants {
 
     companion object{
 
-        val versionDisplay = "Version:3.9.2 - API switch"
+        val versionDisplay = "Version:3.9.22 - Q1 Done"
         //testing in the field
 
         // need to investigate crash when api disconnect mid post

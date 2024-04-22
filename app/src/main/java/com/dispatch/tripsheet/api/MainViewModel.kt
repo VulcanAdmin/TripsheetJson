@@ -11,7 +11,6 @@ import com.dispatch.tripsheet.model.exData
 import com.dispatch.tripsheet.model.notDelData
 import com.dispatch.tripsheet.model.otwData
 import com.dispatch.tripsheet.model.palletData
-import com.dispatch.tripsheet.repository.Repository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
